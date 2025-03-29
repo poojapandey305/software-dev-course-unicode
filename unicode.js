@@ -15,8 +15,14 @@ let inputString = "Hi";
 
 Expected Output:
 sumCodePoints: 177 // 'H' = 72, 'i' = 105, 72 + 105 = 177
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//ans//
+let inputString = "Hi";                                                                                                                                            
+let sumCodePoints = inputString.charCodeAt(0) + inputString.charCodeAt(1);
+console.log(sumCodePoints);                                                                                                                            
 
-Exercise 2: Generate a String from Two Code Points
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Exercise 2: Generate a String from Two Code Points
 Objective: Take two numeric Unicode code points,
 convert them to characters using String.fromCharCode,
 and combine them into a single string.
@@ -31,7 +37,15 @@ let codePoint2 = 66;
 
 Expected Output:
 combinedString: "AB" // 65 = 'A', 66 = 'B', combined = "AB"
-
+------------------------------------------------------------------------------------------------
+*/
+///ans
+let codePoint1 = 65;
+let codePoint2 = 66;
+let combinedString = String.fromCharCode(codePoint1) + String.fromCharCode(codePoint2);   
+console.log(combinedString);                                                        
+//output//AB	
+/*----------------------------------------------------------------------------------------------------------------------------------------------------
 Exercise 3: Find the Character Difference
 Objective: Extract the Unicode code points of two given characters from a string
 and calculate the absolute difference between them.
@@ -49,8 +63,17 @@ Expected Output:
 codePointDifference: 16 // 'C' = 67, 't' = 116, |67 - 116| = 16
 
 
+*/
+let inputString = "Cat";
+let index1 = 0;
+let index2 = 2;
+let codePointDifference = Math.abs(inputString.charCodeAt(index1) - inputString.charCodeAt(index2));
 
-Practice Problem #2
+console.log(codePointDifference); 
+//note – the code point difference is coming as 49 but in question it is showing 16.as per calculation |67 – 116] the answer is also coming 49 absolute.
+
+//--------------------------------------------------------------------------------------------------------------------
+/*Practice Problem #2
 
 Objective
 Practice converting characters from strings to Unicode code points
@@ -86,20 +109,54 @@ Assign the result to a variable named swappedString.
 //Starter Code
 // Task 1
 let inputString1 = "Code";
-let firstCodePoint; // Your code here
-let thirdCodePoint; // Your code here
+
+// Extracting the Unicode code points of the first and third characters using charCodeAt
+let firstCodePoint = inputString.charCodeAt(0); 
+let thirdCodePoint = inputString.charCodeAt(2);  
+
+console.log("First Code Point:", firstCodePoint);
+console.log("Third Code Point:", thirdCodePoint);
+
+
+
+
+
 
 // Task 2
-let wordFromCodePoints; // Your code here
+//let wordFromCodePoints; // Your code here
+// Unicode code points for H, e, l, and l
+// Unicode code points for H, e, l, and l
+let codePoints = [72, 101, 108, 108];
+
+// Using String.fromCharCode to create the word "Hell"
+let wordFromCodePoints =  String.fromCharCode(codePoints[0]) + String.fromCharCode(codePoints[1]) + String.fromCharCode(codePoints[2]) + String.fromCharCode(codePoints[3]);
+
+console.log(wordFromCodePoints);
+
+
+//-----------------------------------------------------------------------------------------------------
+
 
 // Task 3
 let inputString2 = "Launch";
-let swappedString; // Your code here
+//let swappedString; // Your code here
 
-// Log all results
+// Extracting the Unicode code points of the first and last characters
+//let firstCodePoint = inputString2.charCodeAt(0);  
+let lastCodePoint = inputString2.charCodeAt(inputString.length - 1);  
+
+//  Using String.fromCharCode to swap these characters and create a new string
+let swappedString = String.fromCharCode(lastCodePoint) + inputString2[1] + inputString2[2] + inputString2[3] + inputString2[4] + inputString2[5] + String.fromCharCode(firstCodePoint);
+console.log(swappedString);
+
+
 console.log({
-  firstCodePoint,
-  thirdCodePoint,
-  wordFromCodePoints,
-  swappedString,
+  "First Code Point": firstCodePoint,
+  "Third Code Point": thirdCodePoint,
+  "Word From Code Points": wordFromCodePoints,
+  "Swapped String": swappedString
 });
+
+
+
+
